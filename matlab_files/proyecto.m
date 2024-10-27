@@ -18,6 +18,9 @@ fc_FM = 1e6;
 Fs1 = 500e3;
 Fs2 = 4*fc_FM;
 
+% If: Frecuencia Intermedia
+If = 500e3;
+
 
 modelName = 'projectCE1';
 
@@ -25,8 +28,8 @@ open_system(modelName);
 
 set_param([modelName, '/FDM/Spectrum Analyzer'], 'RBWSource', 'property');
 set_param([modelName, '/FDM/Spectrum Analyzer'], 'RBW', '50');
-set_param([modelName, '/FDM/Spectrum Analyzer'], 'FrequencyScale', 'Log');
+%set_param([modelName, '/FDM/Spectrum Analyzer'], 'FrequencyScale', 'Linear');
 
 
-set_param([modelName, '/Freq-Dem/Spectrum Analyzer'], 'SampleRate', '4e6');
-set_param([modelName, '/FM/Spectrum Analyzer'], 'SampleRate', '4e6');
+%set_param([modelName, '/FM-Dem/Spectrum Analyzer'], 'SampleRate', '4e6');
+%set_param([modelName, '/FM/Spectrum Analyzer'], 'SampleRate', '4e6');
